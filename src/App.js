@@ -1,23 +1,61 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from "react-router-dom";
+import "./App.css";
+import Header from "./Component/Header/Header";
+import Home from "./pages/Home";
+import Admin from "./pages/Admin";
+import { useState } from "react";
+import rabbitStart from "./images/rabbit-loading.png";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+  const [load, setLoad] = useState(true);
+  setTimeout(() => {
+    setLoad(false);
+  }, 2000);
+  return load ? (
+    <div>
+      <div
+        style={{
+          width: "100%",
+          height: "100vh",
+          background: "#2382AA",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <div
+          className="rabbitLoad"
+          style={{
+            background: "#2E99C7",
+            width: "200px",
+            height: "200px",
+            borderRadius: "50%",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
         >
-          Learn React
-        </a>
-      </header>
+          <img
+            style={{
+              width: "100px",
+              objectFit: "cover",
+            }}
+            src={rabbitStart}
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+  ) :
+  
+  
+  (
+    <div className="App">
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} key={1} />
+        <Route path="/admin" element={<Admin />} key={2} />
+      </Routes>
     </div>
   );
 }

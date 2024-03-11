@@ -1,0 +1,199 @@
+import "./Home.css";
+import fon1 from "../../images/Group 1.jpg";
+import { IoSearchOutline } from "react-icons/io5";
+import { useSelector } from "react-redux";
+
+const Home = () => {
+  const product = useSelector((state) => state.product.product);
+  console.log(product);
+  return (
+    <div
+      style={{
+        marginTop: "30px",
+      }}
+    >
+      <button
+        style={{
+          margin: "30px 0 30px 50px",
+          background: "#2382AA",
+          border: "none",
+          borderRadius: "10px",
+          color: "white",
+          padding: "15px 20px",
+          fontSize: "20px",
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: "10px",
+          }}
+        >
+          Поиск продуктов <IoSearchOutline />
+        </div>
+      </button>
+      <div
+        className="marquee"
+        style={{
+          display: "flex",
+        }}
+      >
+        <img src={fon1} alt="" />
+        <img
+          style={{
+            margin: "0 60px",
+          }}
+          src={fon1}
+          alt=""
+        />
+        <img src={fon1} alt="" />
+      </div>
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          margin: "40px 150px 0 150px",
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: "20px",
+          }}
+        >
+          <h2>Categories </h2>
+          <img
+            style={{
+              width: "50px",
+              height: "50px",
+            }}
+            src="https://i.pinimg.com/originals/3d/c4/66/3dc46683ec3f6b87da2bb4b78fde993b.png"
+            alt=""
+          />
+        </div>
+        <h2
+          style={{
+            color: "#2382AA",
+          }}
+        >
+          See All
+        </h2>
+      </div>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          gap: "100px",
+          margin: "30px 0",
+        }}
+      >
+        <div className="category">
+          <div className="category">
+            <div className="lips">
+              <img
+                style={{
+                  width: "130px",
+                }}
+                src="https://static.vecteezy.com/system/resources/previews/027/521/085/original/fresh-beef-isolated-on-transparent-background-raw-meat-cut-out-generative-ai-png.png"
+                alt=""
+              />
+            </div>
+          </div>
+          <h1>Meat</h1>
+        </div>
+        <div className="category">
+          <div className="lips">
+            <img
+              style={{
+                width: "130px",
+              }}
+              src="https://imgpng.ru/d/chocolate_PNG97153.png"
+              alt=""
+            />
+          </div>
+          <h1>Sweets</h1>
+        </div>
+        <div className="category">
+          <div className="lips">
+            <img
+              style={{
+                width: "130px",
+              }}
+              src="https://www.pngmart.com/files/17/Fresh-Fruits-PNG-Image.png"
+              alt=""
+            />
+          </div>
+          <h1>Vegetables</h1>
+        </div>
+        <div className="category">
+          <div className="lips">
+            <img
+              style={{
+                width: "130px",
+              }}
+              src="https://www.pngall.com/wp-content/uploads/5/Beverage-PNG-Image-HD.png"
+              alt=""
+            />
+          </div>
+          <h1>Juic</h1>
+        </div>
+        <div className="category">
+          <div className="lips">
+            <img
+              style={{
+                width: "100px",
+              }}
+              src="https://cdn-icons-png.flaticon.com/512/2674/2674486.png"
+              alt=""
+            />
+          </div>
+          <h1>Product</h1>
+        </div>
+      </div>
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          margin: "40px 150px 0 150px",
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: "20px",
+          }}
+        >
+          <h2>Best Product </h2>
+          <img
+            style={{
+              width: "40px",
+              height: "40px",
+              objectFit: "cover",
+            }}
+            src="https://pnglib.nyc3.cdn.digitaloceanspaces.com/uploads/2020/03/flaming-fire_5e7405587ae30.png"
+            alt=""
+          />
+        </div>
+        <h2
+          style={{
+            color: "#2382AA",
+          }}
+        >
+          See All
+        </h2>
+      </div>
+      {product.map((el) => (
+        <div>
+          <h1>{el.name}</h1>
+        </div>
+      ))}
+    </div>
+  );
+};
+
+export default Home;

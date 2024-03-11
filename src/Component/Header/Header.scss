@@ -1,0 +1,26 @@
+.header {
+  width: 100%;
+  height: 110px;
+  .homeLips {
+    background: #2382aa56;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    align-items: center;
+  }
+}
+
+.rabbitLoad {
+  animation: rabbitLoading 2.5s infinite;
+}
+@keyframes rabbitLoading {
+  50% {
+    transform: rotate(360deg) scale(1.2);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
