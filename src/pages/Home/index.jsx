@@ -2,10 +2,11 @@ import "./Home.css";
 import fon1 from "../../images/Group 1.jpg";
 import { IoSearchOutline } from "react-icons/io5";
 import { useSelector } from "react-redux";
+import add_product from "../../images/add_product.svg";
+import { NavLink } from "react-router-dom";
 
 const Home = () => {
   const product = useSelector((state) => state.product.product);
-  console.log(product);
   return (
     <div
       style={{
@@ -138,7 +139,7 @@ const Home = () => {
               alt=""
             />
           </div>
-          <h1>Juic</h1>
+          <h1>Drink</h1>
         </div>
         <div className="category">
           <div className="lips">
@@ -158,7 +159,7 @@ const Home = () => {
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
-          margin: "40px 150px 0 150px",
+          margin: "60px 150px 40px 150px",
         }}
       >
         <div
@@ -187,11 +188,20 @@ const Home = () => {
           See All
         </h2>
       </div>
-      {product.map((el) => (
-        <div>
-          <h1>{el.name}</h1>
+      <div className="container">
+        <div className="home_blocks">
+          {product.map((el) => (
+            <div className="home_block">
+              <img className="product" src={el.image} alt="" />
+              <NavLink to={`/detal/${el.id}`}>
+                <img className="add" src={add_product} alt="" />
+              </NavLink>
+              <h1>{el.price}$</h1>
+              <h3>{el.name.length > 20 ? el.name.slice(0, 20) : el.name}</h3>
+            </div>
+          ))}
         </div>
-      ))}
+      </div>
     </div>
   );
 };

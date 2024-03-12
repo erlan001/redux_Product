@@ -33,3 +33,39 @@
   align-items: center;
   gap: 20px;
 }
+.home_blocks {
+  display: flex;
+  gap: 20px;
+  overflow: auto;
+}
+.home_block {
+  width: 320px;
+  height: 420px;
+  padding: 40px 20px 0px 25px;
+  border: solid 3px #dedede;
+  border-radius: 25px;
+  box-shadow: 0 0 3px #dedede;
+  margin-left: 60px;
+  position: relative;
+}
+.home_block h1 {
+  font-size: 35px;
+  color: #ff324b;
+  margin: 20px 0;
+}
+.home_block h3 {
+  letter-spacing: 1.3px;
+  font-weight: 300;
+}
+.product {
+  width: 90%;
+  height: 70%;
+}
+.add {
+  width: 23%;
+  object-fit: cover;
+  position: absolute;
+  right: 30px;
+  top: 240px;
+  cursor: pointer;
+}

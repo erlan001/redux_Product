@@ -7,6 +7,8 @@ const Admin = () => {
   const [name, setName] = useState("");
   const [image, setImage] = useState("");
   const [price, setPrice] = useState("");
+  const [plot, setPlot] = useState("");
+  const [category, setCategory] = useState("");
   const dispatch = useDispatch();
   function creatData() {
     let data = JSON.parse(localStorage.getItem("product")) || [];
@@ -15,6 +17,8 @@ const Admin = () => {
       image,
       price,
       count: 1,
+      plot,
+      category,
       id: Date.now(),
     };
     data.push(newObj);
@@ -44,6 +48,24 @@ const Admin = () => {
         type="number"
         placeholder="Price..."
       />
+      <input
+        onChange={(e) => setPlot(e.target.value)}
+        class="input"
+        name="text"
+        type="text"
+        placeholder="Plot..."
+      />
+      <select
+        onChange={(e) => setCategory(e.target.value)}
+        id=""
+        className="select_category"
+      >
+        <option value="meat">Meat</option>
+        <option value="vegetable">Vegetable</option>
+        <option value="drink">Drink</option>
+        <option value="sweet">Sweet</option>
+        <option value="product">Product</option>
+      </select>
       <button onClick={creatData}>CREATE</button>
     </div>
   );
