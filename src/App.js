@@ -6,6 +6,8 @@ import Admin from "./pages/Admin";
 import { useState } from "react";
 import rabbitStart from "./images/rabbit-loading.png";
 import DetalProduct from "./pages/DetalProduct/DetalProduct";
+import Order from "./pages/Order/Order";
+import Category from "./pages/Category/Category";
 
 function App() {
   const [load, setLoad] = useState(true);
@@ -57,6 +59,8 @@ function App() {
         <Route path="/" element={<Home />} key={1} />
         <Route path="/admin" element={<Admin />} key={2} />
         <Route path="/detal/:id" element={<DetalProduct/>} key={3} />
+        <Route path="/order" element={<Order/>} key={4} />
+        <Route path="/category/:category" element={<Category/>} key={5} />
       </Routes>
     </div>
   );
