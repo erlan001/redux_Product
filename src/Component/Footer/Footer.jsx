@@ -9,6 +9,7 @@ import { FaInstagram } from "react-icons/fa";
 
 const Footer = () => {
     //erlan
+    //frgb
     return (
         <div style={{
             background:' #2b8db7',
